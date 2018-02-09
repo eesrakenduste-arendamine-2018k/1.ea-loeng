@@ -14,9 +14,15 @@ function init () {
 }
 
 function startClock () {
-  window.setInterval(function () {
-    const date = new Date()
+  updateClock()
 
-    clockContainer.innerHTML = date
+  window.setInterval(function () {
+    updateClock()
   }, 1000)
+}
+
+function updateClock () {
+  const date = new Date()
+
+  clockContainer.innerHTML = date
 }
