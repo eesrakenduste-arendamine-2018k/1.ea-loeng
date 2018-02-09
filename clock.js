@@ -11,6 +11,16 @@ function init () {
   console.log(clockContainer)
 
   startClock()
+
+  document
+    .querySelector('#change-position')
+    .addEventListener('click', changeLocation)
+}
+
+function changeLocation (event) {
+  console.log(event)
+  clockContainer.style.left = Math.round(Math.random() * window.innerWidth) + 'px';
+  clockContainer.style.top = Math.round(Math.random() * window.innerHeight) + 'px';
 }
 
 function startClock () {
