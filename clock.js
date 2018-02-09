@@ -18,11 +18,21 @@ function init () {
   document
     .querySelector('#size-down')
     .addEventListener('click', sizeDown)
+
+  window.addEventListener('keypress', hideClock)
+}
+
+function hideClock (event) {
+  console.log(event)
+  if (event.key == 'h') {
+    clockContainer.style.display = 'none'
+    // clockContainer.style.visibility = 'hidden'
+  }
 }
 
 function sizeUp () {
   console.log('+')
-  clockContainer.style.fontSize = '25px'
+  clockContainer.style.fontSize = 12 + 'px'
 }
 function sizeDown () {
   console.log('-')
